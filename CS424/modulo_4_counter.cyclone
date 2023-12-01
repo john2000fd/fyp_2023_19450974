@@ -1,4 +1,4 @@
-graph modulo{               //Assignment 1, Modulo 4 Counter, CS424, by John Dunne 19450974
+graph modulo{              
                             
 
     bool r1; //first state
