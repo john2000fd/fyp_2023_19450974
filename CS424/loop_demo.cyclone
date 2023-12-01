@@ -1,0 +1,40 @@
+
+graph loop{
+
+    int i;
+    int z;
+    int x;
+    int y;
+
+    start normal node B0{
+        i=0;
+        z=0;
+    }
+
+    normal node B1{
+        i++;
+    }
+
+    normal node B2{
+        z=z+x;
+    }
+
+    abstract final node T{}
+
+    edge {B0 -> B1 where i!=y;}
+    edge {B0 -> T}
+    edge {B1 ->B1 where i!=y;}
+    //edge {B2 -> B1 where i!=y;}
+    edge {B2 -> T}
+
+    invariant loop_inv{z==x*i;}
+
+    goal{
+        
+        assert(z == x*y);
+
+        check upto 5
+    }
+
+
+}

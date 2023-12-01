@@ -1,0 +1,55 @@
+/*
+* Dot trace for TwoBitCounter
+* [Time Stamp]:12:29:11, Oct-31-2023
+* [Location]:c:\Users\frand\OneDrive\Desktop\CS424\trace\two_bit_counter.dot
+* [States]:1
+* S 
+* [Trans]:1
+* [Start State]:S
+* [Final State(s)]:
+*S 
+* [Trace Length]:4 
+*/
+
+
+
+
+digraph G { 
+
+
+
+	 rankdir="LR"
+
+
+
+	n0 [color="black", style="rounded, filled" , fillcolor="pink" , shape="rect", label= < 
+ 		 <table border='0' cellborder='0' style='rounded'> 
+			 <tr><td align="center" colspan="2" > <b>[0] @S</b></td></tr>
+			 <tr><td align="center">l : </td><td>false</td></tr> 
+			 <tr><td align="center">r : </td><td>false</td></tr> 
+		 </table> > ]
+	n1 [color="black", style="rounded, filled" , fillcolor="pink" , shape="rect", label= < 
+ 		 <table border='0' cellborder='0' style='rounded'> 
+			 <tr><td align="center" colspan="2" > <b>[1] @S</b></td></tr>
+			 <tr><td align="center">l : </td><td>false</td></tr> 
+			 <tr><td align="center">r : </td><td>true</td></tr> 
+		 </table> > ]
+	n2 [color="black", style="rounded, filled" , fillcolor="pink" , shape="rect", label= < 
+ 		 <table border='0' cellborder='0' style='rounded'> 
+			 <tr><td align="center" colspan="2" > <b>[2] @S</b></td></tr>
+			 <tr><td align="center">l : </td><td>true</td></tr> 
+			 <tr><td align="center">r : </td><td>false</td></tr> 
+		 </table> > ]
+	n3 [color="black", style="rounded, filled" , fillcolor="pink" , shape="rect", label= < 
+ 		 <table border='0' cellborder='0' style='rounded'> 
+			 <tr><td align="center" colspan="2" > <b>[3] @S</b></td></tr>
+			 <tr><td align="center">l : </td><td>true</td></tr> 
+			 <tr><td align="center">r : </td><td>true</td></tr> 
+		 </table> > ]
+
+
+
+
+	n0->n1->n2->n3
+ } 
+

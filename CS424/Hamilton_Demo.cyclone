@@ -1,0 +1,33 @@
+
+graph G {
+
+        abstract final node A{}
+        abstract final node B{}
+        abstract final node C{}
+        abstract final node D{}
+        abstract final node E{}
+        abstract final node F{}
+        abstract final node G{}
+        //abstract final node S{}
+
+        edge { S -> + }
+        edge { A <-> B,D,F,G }
+        edge { B <-> A,D,C }
+        edge { C <-> B,D,F,E }
+        edge { D <-> A,B,C }
+        edge { E <-> C,F }
+        edge { F <-> G,E,A,C }
+        edge { G <-> A,F }
+
+        goal{
+
+            let cycle1 = >> (S->A) && (<<A) && B^(1) && C^(1) && D^(1) && E^(1) && F^(1) && G^(1);
+            let cycle2 = >> (S->B) && (<<B) && A^(1) && C^(1) && D^(1) && E^(1) && F^(1) && G^(1);
+            let cycle3 = >> (S->B) && (<<B) && A^(1) && C^(1) && D^(1) && E^(1) && F^(1) && G^(1);
+
+            
+            check for 8 condition (cycle1 || cycle2)
+        }
+
+    
+}

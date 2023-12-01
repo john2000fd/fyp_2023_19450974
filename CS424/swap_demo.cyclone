@@ -1,0 +1,31 @@
+
+graph Swap{
+
+    int t;
+    int x;
+    int y;
+
+    start normal node B0{
+        t=x;
+    }
+
+    normal node B1{
+        x=y;
+    }
+
+    normal node B2{
+        y=t;
+    }
+
+    abstract final node T{}
+
+    edge {B0 -> B1}
+    edge {B1 -> B2}
+    edge {B2 -> T}
+
+    goal{
+
+        assert (x==initial(y) && y==initial(x));
+        check for 3 
+    }
+}

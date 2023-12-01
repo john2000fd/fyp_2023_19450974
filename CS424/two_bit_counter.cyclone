@@ -1,0 +1,24 @@
+option-trace=true;
+
+graph TwoBitCounter{
+    bool l;
+    bool r;
+    
+    normal start final node S{
+        l = (l!=r);
+        r = !r;
+    }
+
+    edge { S -> S }
+
+    //invariant property {!l || !r;}
+
+
+    goal{
+        assert (initial(l) && initial(r));
+
+        assert some !(!l || !r);
+        check for 3
+    }
+
+}

@@ -1,0 +1,27 @@
+graph modulo{               //Assignment 1, Modulo 4 Counter, CS424, by John Dunne 19450974
+                            
+
+    bool r1; //first state
+    bool r2; //second state
+    bool y; //output value
+    
+    normal start final node S{  //transition function description
+        r1 = (r1!=r2); // l is true if it has a different truth value from r.
+        r2 = !r2;  // r is the opposite of its current truth value
+        y = (!r1 && !r2);   //final output value, only valid when both l and r are not true 
+
+    }
+
+    edge { S -> S }  
+
+    invariant property {!r1 || !r2;}  // invariant that must hold throughout
+
+
+    goal{
+        assert (!initial(r1) && !initial(r2) && initial(y));  // use inital values 
+        assert(y == true);  //this assert statement is making sure that every 4 transitions, the modulo 4 counter output value will be set to true as per the spec of the counter 
+        check for 3,7,11,15,19 reach (S)    //any number which is the result of 4 transitions will cause the y value to be equal to true.
+        //check for 4 reach (S)
+    }
+
+}
